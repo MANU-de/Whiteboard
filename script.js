@@ -50,6 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
         task.textContent = text;
         task.id = 'task-' + Date.now();
 
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'x';
+        deleteBtn.classList.add('delete-btn');
+        task.appendChild(deleteBtn);
+
+        deleteBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent drag start when clicking delete
+            task.remove();
+            saveTasksToLocalStorage();
+        });
+
         task.addEventListener('dragstart', (e) => {
             e.dataTransfer.setData('text/plain', task.id);
         });
@@ -62,7 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
         columns.forEach(column => {
             const status = column.dataset.status;
             boardState[status] = Array.from(column.children)
-                .map(task => task.textContent);
+            .filter(child => child.classList.contains('task')) // Only save task elements
+            .map(task => task.textContent.replace('x', ' ').trim()); // Remove delete button text
+               /* .map(task => task.textContent);*/
         });
         localStorage.setItem('kanbanBoard', JSON.stringify(boardState));
     }

@@ -34,6 +34,18 @@ body {
     margin: 10px;
     padding: 10px;
     cursor: move;
+    position: relative;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #f00; /* Red background */
+    color: white;
+    border: none;
+    padding: 2px 5px;
+    cursor: pointer;
 }
 
 .modal {
