@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    display: flex;
     
 }
 
@@ -106,7 +107,9 @@ body {
 
 }
 
-/* Responsive Design */
+/*
+
+Responsive Design 
 @media (max-width: 1200px) {
     .column {
         flex: 1 1 45%;
@@ -156,3 +159,4 @@ body {
         width: 95%;
     }
 }
+    */
