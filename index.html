@@ -9,28 +9,38 @@
 <body>
     <div class="board">
         <div class="column" id="planung">
-            <h2>Planning</h2>
+            <h2>Planning 📝</h2>
             <div class="task-container" data-status="planung"></div>
             <button class="add-task-btn">+ Add Task</button>
         </div>
         <div class="column" id="in-arbeit">
-            <h2>In Progress</h2>
+            <h2>In Progress 🔧</h2>
             <div class="task-container" data-status="in-arbeit"></div>
         </div>
         <div class="column" id="done">
-            <h2>Done</h2>
+            <h2>Done ✅</h2>
             <div class="task-container" data-status="done"></div>
         </div>
+        <div class="note">
+            <h3>Note:</h3>
+            <p>
+            Don't always think about what needs to be done.
+            Use your time and energy <strong>TO DO</strong>
+            </p>
+            <h1 style="font-size:5vw">
+                📋
+            </h1>
+ 
+       </div>
     </div>
-
-    <div id="task-modal" class="modal">
+   <div id="task-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <textarea id="task-input" placeholder="Enter task description"></textarea>
+            <textarea id="task-input" placeholder="Enter your task description"></textarea>
+            <br>
             <button id="save-task">Save Task</button>
         </div>
     </div>
-
-    <script src="script.js"></script>
+   <script src="script.js"></script>
 </body>
 </html>
